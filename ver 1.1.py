@@ -29,7 +29,12 @@ def index():
 
     pass
 
+#kid
+@route("Kid")
+@view ("Kid")
+def Kid():
 
+    pass
 
 run(host='0.0.0.0', port=8080, reloader = True, debug = True)
 
