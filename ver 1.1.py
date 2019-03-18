@@ -31,22 +31,19 @@ def index():
 
 
 
+
+
 @route('/picture/<filename>')
 def saved_picture (filename):
     return static_file(filename, root='./images')
 
 
 
-@route("/cart")
-@view("cart")
-def cart():
-    pass
-
 @route("/stock")
 @view("stock")
 def stock():
-    data = dict (comic_list = comics)
-    return data
+    pass   
+
 
 
 
@@ -56,6 +53,36 @@ def stock():
 def Kid():
 
     pass
+
+
+@route("/cart") 
+@view("cart") 
+def cart(): 
+    data = dict (comic_list = comics) 
+    return data 
+
+
+
+
+
+@route('/buy_success/<comic_id>')
+@view ('buy_success')
+def buy_success(comic_id):
+    
+    comic_id = int(comic_id)
+    found_comic = None
+    for Comic in comics:
+        if comic.id == comic_id:
+            found_comic = Comic
+    data = dict (Comic = found_comic)
+    found_comic.stock = found_comic.stock - 1
+    
+    return data
+
+
+
+
+
 
 run(host='0.0.0.0', port=8080, reloader = True, debug = True)
 

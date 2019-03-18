@@ -1,39 +1,38 @@
  <!DOCTYPE>
  
-	<html>
-	%include('shared/header.html')
+<html>
+    %include('shared/header.html')
     %include('shared/nav_bar.html')
-	<body class = "grey">
-  
-  
-  
-  
-  
-  
-	<table  class = "striped">
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>Stock</th>
-              <th>Item Price</th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <tr>
-            <td>Super Dude</td>
-            <td>08</td>
-            <td>$0.69</td>
-          </tr>
-          <tr>
-            <td>Lizard Man</td>
-            <td>12</td>
-            <td>$3.00</td>
-          </tr>
-          <tr>
-            <td>Water Woman</td>
-            <td>03</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-    </table>
+    <body class = "grey">
+  
+		<div>
+	
+				% for Comic in comic_list:
+				<div class="col s6 row center black container">
+					<h2 class="header yellow-text ">{{Comic.comic_name}}</h2>
+					<div class="card horizontal black ">
+						<div class="card-image z-depth-1">
+					
+						</div>
+					<div class="card-stacked">
+					<img src="/picture/{{Comic.comic_image}}" style = "width:500px; height:400px">
+						<div class="card-content yellow accent-3 black-text">
+						<h5>Stock = {{Comic.comic_stock}}</h5>
+						
+						</div>
+					
+					</div>
+					</div>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+		</div>
+		
+	
+</html>
