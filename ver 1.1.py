@@ -71,11 +71,11 @@ def buy_success(comic_id):
     
     comic_id = int(comic_id)
     found_comic = None
-    for Comic in comics:
+    for comic in comics:
         if comic.id == comic_id:
-            found_comic = Comic
-    data = dict (Comic = found_comic)
-    found_comic.stock = found_comic.stock - 1
+            found_comic = comic
+    data = dict (comic = found_comic)
+    found_comic.comic_stock = found_comic.comic_stock - 1
     
     return data
 
