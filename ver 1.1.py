@@ -42,7 +42,8 @@ def saved_picture (filename):
 @route("/stock")
 @view("stock")
 def stock():
-    pass   
+    data = dict (comic_list = comics) 
+    return data       
 
 
 

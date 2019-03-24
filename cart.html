@@ -20,9 +20,12 @@
 					<img src="/picture/{{Comic.comic_image}}" style = "width:500px; height:400px">
 						<div class="card-content yellow accent-3 black-text">
 						<h5>Stock = {{Comic.comic_stock}}</h5>
-						if {{comic.comic.stock}} > 0: print
-						<a href = "/buy_success/{{Comic.id}}"  class="waves-effect waves-light btn-small pink">Buy Now!</a>
-						
+						%if Comic.comic_stock !=0 or Comic.comic_stock < 0:
+							<a href = "/buy_success/{{Comic.id}}"  class="waves-effect waves-light btn-small pink">Buy Now!</a>
+						%else:
+							<p>OUT OF STOCK!</p>
+						%end
+				
 						</div>
 					
 					</div>
@@ -36,7 +39,8 @@
 				
 				
 		</div>
+	<footer>
 	%include('shared/footer.html')
-		
+	</footer>
 	
 </html>
