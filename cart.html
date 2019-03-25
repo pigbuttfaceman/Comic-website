@@ -6,7 +6,7 @@
 	
 
     <body class = "grey">
-  
+
 		<div>
 	
 				% for Comic in comic_list:
@@ -18,6 +18,7 @@
 						</div>
 					<div class="card-stacked">
 					<img src="/picture/{{Comic.comic_image}}" style = "width:500px; height:400px">
+					<h5 class = "white-text">Sold = 0</h5>
 						<div class="card-content yellow accent-3 black-text">
 						<h5>Stock = {{Comic.comic_stock}}</h5>
 						%if Comic.comic_stock !=0 or Comic.comic_stock < 0:
