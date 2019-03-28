@@ -16,7 +16,7 @@
 			  <tr>
 				  <th>Name</th>
 				  <th>Stock</th>
-				  <th>Item Price</th>
+				  <th>Sold</th>
 			  </tr>
 			</thead>
 	% for Comic in comic_list:
@@ -24,7 +24,7 @@
 			  <tr>
 				<td>{{Comic.comic_name}}</td>
 				<td>{{Comic.comic_stock}}</td>
-				<td>$0.69</td>
+				<td>{{Comic.comic_sold}}</td>
 			  </tr>
 			  
 			</tbody>

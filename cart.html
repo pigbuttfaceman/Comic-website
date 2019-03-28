@@ -28,13 +28,8 @@
 						%end
 				
 						</div>
-					%stock = 0
-					%end
-					%if Comic.comic_stock - 1
-						%stock = stock + 1
-					<h5 class = "white-text">Sold = {{stock}}</h5>
-						%end
-					%end
+					
+					<h5 class = "white-text">Sold = {{Comic.comic_sold}}</h5>
 					</div>
 					</div>
 					

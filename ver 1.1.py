@@ -7,18 +7,19 @@ class Comic:
 
     _ids = count (0)
 
-    def __init__(self, name, image, stock):
+    def __init__(self, name, image, stock, sold):
         self.id = next(self._ids)
         self.comic_name = name
         self.comic_image = image
         self.comic_stock = stock
+        self.comic_sold = sold
 
 
 
 comics = [
-    Comic("Super Dude", "superdude.jpg", 8 ),
-    Comic("Lizard Man", "lizardman.png", 12 ),
-    Comic("Water Woman", "drip.jpg", 3)
+    Comic("Super Dude", "superdude.jpg", 8, 0 ),
+    Comic("Lizard Man", "lizardman.png", 12, 0 ),
+    Comic("Water Woman", "drip.jpg", 3, 0)
     ]
 
 
@@ -77,6 +78,7 @@ def buy_success(comic_id):
             found_comic = comic
     data = dict (comic = found_comic)
     found_comic.comic_stock = found_comic.comic_stock - 1
+    found_comic.comic_sold = found_comic.comic_sold + 1
     
     return data
 
