@@ -49,12 +49,13 @@ def stock():
 
 
 
-#kid
-@route("/Kid")
-@view ("Kid")
-def Kid():
+#plus_stock
+@route("/plus_stock")
+@view ("plus_stock")
+def plus_stock():
+    data = dict (comic_list = comics) 
+    return data    
 
-    pass
 
 
 @route("/cart") 
@@ -83,7 +84,19 @@ def buy_success(comic_id):
     return data
 
 
-
+@route('/add_success/<comic_id>')
+@view ('add_success')
+def add_success(comic_id):
+    
+    comic_id = int(comic_id)
+    found_comic = None
+    for comic in comics:
+        if comic.id == comic_id:
+            found_comic = comic
+    data = dict (comic = found_comic)
+    found_comic.comic_stock = found_comic.comic_stock + 1
+    
+    return data
 
 
 

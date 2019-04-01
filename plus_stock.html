@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-
+<!DOCTYPE>
 	<html>
 	%include('shared/header.html')
     %include('shared/nav_bar.html')
 	
 	<body class = "grey">
-  
-  
-  
-  
-  
-	
-		<table  class = "striped">
+	<table  class = "striped">
 			<thead>
 			  <tr>
 				  <th>Name</th>
@@ -25,6 +18,7 @@
 				<td>{{Comic.comic_name}}</td>
 				<td>{{Comic.comic_stock}}</td>
 				<td>{{Comic.comic_sold}}</td>
+				<td><a href = "/add_success/{{Comic.id}}"  class="waves-effect waves-light btn-small pink">Add</a></td>
 			  </tr>
 			  
 			</tbody>
@@ -33,14 +27,4 @@
 	
 	
 	
-	
-	<center>
-	<img src = "/picture/intervention.png" style = "width:1500px ; height:700px" class = "container">
-	</center>
-	
-	
-	
-	<footer>
-	
 	%include('shared/footer.html')
-	</footer>
